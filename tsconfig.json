@@ -1,4 +1,5 @@
 {
+  "exclude": ["./node_modules"],
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
@@ -17,6 +18,12 @@
     },
 
     // Remix takes care of building everything in `remix build`.
-    "noEmit": true
+    "noEmit": true,
+
+    // Ignore node_modules
+    "skipLibCheck": true,
+
+    // Force import types as `import type`
+    "importsNotUsedAsValues": "error"
   }
 }
