@@ -1,0 +1,21 @@
+{
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "public/build": true,
+    "build": true,
+    ".cache": true
+  },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    ".*Class",
+    ".*Classes",
+    ".*Classes: .*"
+  ],
+  "tailwindCSS.experimental.classRegex": [["clsx\\(([^)]*)\\)", "'([^']*)'"]]
+}
