@@ -4,6 +4,9 @@ import { Response } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import isbot from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
+import * as env from "~/services/env.server";
+
+env.init();
 
 const ABORT_DELAY = 5000;
 
