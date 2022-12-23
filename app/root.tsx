@@ -5,10 +5,10 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
+  ScrollRestoration
 } from "@remix-run/react";
 
-import appStylesheetUrl from "~/../styles/app.css";
+import appStylesheetUrl from "~/styles/app.css";
 
 export const links: LinksFunction = () => {
   return [

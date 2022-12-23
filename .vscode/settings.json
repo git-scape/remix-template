@@ -5,9 +5,22 @@
     "source.organizeImports": true
   },
   "editor.formatOnSave": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json, tsconfig.tsbuildinfo",
+    "package.json": ".eslintrc, .eslintrc.js, .gitattributes, .gitignore, .prettierignore, package-lock.json, playwright.config.ts, remix.env.d.ts, remix.config.js, tsconfig.json, vitest.config.ts, tailwind.config.js, yarn.lock"
+  },
   "files.associations": {
     "*.css": "tailwindcss"
   },
+
+  "files.exclude": {
+    "**/.cache": true,
+    "**/build": true,
+    "**/coverage": true,
+    "**/node_modules": true
+  },
+  "search.useGlobalIgnoreFiles": true,
   "search.exclude": {
     "**/node_modules": true,
     "public/build": true,
