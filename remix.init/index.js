@@ -40,8 +40,8 @@ const getPackageManagerVersion = (packageManager) =>
 const main = async ({ packageManager, rootDirectory }) => {
   const pm = getPackageManagerCommand(packageManager);
 
-  const EXAMPLE_ENV_PATH = path.join(rootDirectory, ".env");
-  const ENV_PATH = path.join(rootDirectory, ".env.example");
+  const EXAMPLE_ENV_PATH = path.join(rootDirectory, ".env.example");
+  const ENV_PATH = path.join(rootDirectory, ".env");
 
   const [exampleEnv] = await Promise.all([
     fs.readFile(EXAMPLE_ENV_PATH, "utf-8"),
