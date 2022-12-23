@@ -1,5 +1,9 @@
 {
   "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
   "editor.formatOnSave": true,
   "files.associations": {
     "*.css": "tailwindcss"
@@ -8,6 +12,7 @@
     "**/node_modules": true,
     "public/build": true,
     "build": true,
+    "app/styles": true,
     ".cache": true
   },
   "tailwindCSS.classAttributes": [
@@ -17,5 +22,8 @@
     ".*Classes",
     ".*Classes: .*"
   ],
-  "tailwindCSS.experimental.classRegex": [["clsx\\(([^)]*)\\)", "'([^']*)'"]]
+  "tailwindCSS.experimental.classRegex": [
+    ["clsx\\(([^)]*)\\)", "'([^']*)'"],
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ]
 }
