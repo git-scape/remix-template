@@ -34,30 +34,29 @@ const getPackageManagerCommand = (packageManager) =>
   }[packageManager]());
 
 const getPackageManagerVersion = (packageManager) =>
-// Copied over from https://github.com/nrwl/nx/blob/bd9b33eaef0393d01f747ea9a2ac5d2ca1fb87c6/packages/nx/src/utils/package-manager.ts#L105-L114
-execSync(`${packageManager} --version`).toString("utf-8").trim();
+  // Copied over from https://github.com/nrwl/nx/blob/bd9b33eaef0393d01f747ea9a2ac5d2ca1fb87c6/packages/nx/src/utils/package-manager.ts#L105-L114
+  execSync(`${packageManager} --version`).toString("utf-8").trim();
 
 const main = async ({ packageManager, rootDirectory }) => {
-    const pm = getPackageManagerCommand(packageManager);
+  const pm = getPackageManagerCommand(packageManager);
 
-    const EXAMPLE_ENV_PATH = path.join(rootDirectory, '.env')
-    const ENV_PATH = path.join(rootDirectory, '.env.example')
+  const EXAMPLE_ENV_PATH = path.join(rootDirectory, ".env");
+  const ENV_PATH = path.join(rootDirectory, ".env.example");
 
-    const [exampleEnv] = await Promise.all([
-        fs.readFile(EXAMPLE_ENV_PATH, 'utf-8')
-    ])
+  const [exampleEnv] = await Promise.all([
+    fs.readFile(EXAMPLE_ENV_PATH, "utf-8"),
+  ]);
 
-   const fileOperationPromises = [
-    fs.writeFile(ENV_PATH, exampleEnv)
-   ]
+  const fileOperationPromises = [fs.writeFile(ENV_PATH, exampleEnv)];
 
-   await Promise.all(fileOperationPromises)
+  await Promise.all(fileOperationPromises);
 
-   console.log(`
+  console.log(
+    `
 You're all set! Start building something great 🤘
   ${pm.run("dev")}
     `.trim()
   );
-}
+};
 
-module.exports = main
+module.exports = main;
