@@ -1,22 +1,22 @@
 import { json, LoaderArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-export async function loader ({ request } : LoaderArgs) {
+export async function loader({ request }: LoaderArgs) {
   let url = new URL(request.url);
   let name = url.searchParams.get("name")?.trim();
 
-  let message = 'Welcome to Remix';
+  let message = "Welcome to Remix";
   if (name) {
     message += `, ${name}!`;
   }
 
   return json({
-    message
-  })
+    message,
+  });
 }
 
 export default function Index() {
-  const { message } = useLoaderData<typeof loader>()
+  const { message } = useLoaderData<typeof loader>();
 
   return (
     <div>
