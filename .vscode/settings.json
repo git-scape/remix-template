@@ -7,6 +7,8 @@
   "editor.formatOnSave": true,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
+    "*.ts": "*.test.ts",
+    "*.tsx": "*.test.tsx, *.stories.tsx",
     "tsconfig.json": "tsconfig.*.json, tsconfig.tsbuildinfo",
     "package.json": ".eslintrc, .eslintrc.js, .gitattributes, .gitignore, .prettierignore, package-lock.json, playwright.config.ts, remix.env.d.ts, remix.config.js, tsconfig.json, vitest.config.ts, tailwind.config.js, yarn.lock"
   },
